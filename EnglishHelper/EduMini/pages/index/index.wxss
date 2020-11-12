@@ -1,0 +1,7 @@
+.index-container {
+  padding: 20px
+}
+
+.layout {
+  margin-top: 10px;
+}

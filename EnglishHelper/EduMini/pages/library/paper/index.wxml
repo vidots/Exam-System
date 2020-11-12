@@ -1,0 +1,5 @@
+<view>
+  <van-cell-group>
+    <van-cell size="large" wx:for="{{papers}}" wx:key="id" title="{{ item.name }}" label=" 已完成：{{ finish.length > index ? finish[index].finish : 0 }} / {{ total.length > index ? total[index].total : 0 }}" link-type="navigateTo" url="/pages/exam/index?paper_id={{ item.id }}" arrow-direction="left" />
+  </van-cell-group>
+</view>

@@ -1,0 +1,7 @@
+<view class="page-container">
+  <view>
+    <van-button type="primary" custom-style="margin-right:30rpx" bind:click="startAnwser">开始做题</van-button>
+    <van-button type="primary" custom-style="margin-right:30rpx" bind:click="startSetting">个人中心</van-button>
+    <van-button type="primary" bind:click="startPreview">预览文章</van-button>
+  </view>
+</view>

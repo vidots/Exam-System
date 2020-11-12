@@ -1,0 +1,36 @@
+.body {
+  padding: 12px;
+}
+
+.card {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2px 4px 8px 2px #cccccc;
+  margin: 8px;
+  padding: 8px;
+}
+
+.name {
+  margin-bottom: 16px;
+  font-size: 18px;
+}
+
+.vip {
+  color: red;
+  font-size: 16px;
+}
+
+.series-desc {
+  color: gray;
+  font-size: 15px;
+}
+
+.blank {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+} 

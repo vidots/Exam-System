@@ -1,0 +1,8 @@
+<view class="body">
+      <view class="card" wx:for="{{ paragraphs }}" wx:key="id">
+        <view bindtap="onParagraphClick" data-index="{{ index }}">
+          <view class="content"><text selectable="true">{{ item.content }}</text></view>
+          <view class="parse" wx:if="{{ visibles[index] }}"><text selectable="true">{{ item.parse }}</text></view>
+        </view>
+      </view>
+</view>

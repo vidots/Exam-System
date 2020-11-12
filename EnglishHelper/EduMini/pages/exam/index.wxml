@@ -1,0 +1,54 @@
+<view class="page-container">
+  <scroll-view style="height: {{scrollviewHeight}}px" scroll-y="true">
+    <view style="margin-bottom:48rpx">
+      <text style="font-weight:bold;">{{ currentQuestion.category == 0 ? "单选题" : "多选题" }}({{ current + 1 }}/{{ questionCount }})</text>
+      <view style="margin:20rpx"></view>
+      <text style="margin-top:30rpx;">{{ currentQuestion.content }}</text>
+
+      <van-button custom-class="choose_button" bind:click="clickOne" plain="{{ !chooseOne }}" block type="warning">A {{ currentQuestion.optionOne }}</van-button>
+      <van-button custom-class="choose_button" bind:click="clickTwo" plain="{{ !chooseTwo }}" block type="warning">B {{ currentQuestion.optionTwo }}</van-button>
+      <van-button custom-class="choose_button" bind:click="clickThree" plain="{{ !chooseThree }}" block type="warning">C {{ currentQuestion.optionThree }}</van-button>
+      <van-button custom-class="choose_button" bind:click="clickFour" plain="{{ !chooseFour }}" block type="warning">D {{ currentQuestion.optionFour }}</van-button>
+    </view>
+    <view style="margin-top:20rpx" wx:if="{{isSubmit || showAnalysis}}">
+      <view style="margin-bottom:20rpx">正确答案：
+        <text style="color: green">{{ rightAnswer }}</text>
+      </view>
+      <view style="margin-bottom:20rpx" wx:if="{{ myAnswer != '' }}">你的答案：
+        <text style="color: {{ rightAnswer == myAnswer  ? 'green' : 'red' }}">{{ myAnswer }}</text>
+      </view>
+      <view>
+        <text>{{ currentQuestion.analysis }}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <van-notify id="van-notify" />
+  <van-popup close-on-click-overlay="true" show="{{ isShowPopup }}" position="right" custom-style="width: 80%; height: 100%;" bind:close="onClose">
+    <view style="padding:40rpx" wx:if="{{ isShowPopup }}">
+      <view style="margin-bottom: 60rpx">
+        <text>答案解析</text>
+      </view>
+      <van-row gutter="10">
+        <van-col span="6" wx:for="{{ questions }}" wx:key="index">
+          <van-button round size="mini" custom-style="margin:10rpx" type="{{ item.answer == answers[index].answer ? 'primary' : 'danger' }}" bind:click="jumpToIndex" data-index="{{ index }}">{{ index + 1 }}</van-button>
+        </van-col>
+      </van-row>
+    </view>
+  </van-popup>
+  <view class="footer-group">
+    <van-button type="primary" plain custom-class="submit-button" bind:click="preQuestion">上一题</van-button>
+    <van-button type="primary" plain custom-class="submit-button" bind:click="nextQuestion">下一题</van-button>
+    <van-button wx:if="{{ !isSubmit }}" type="warning" size="small" bind:click="startAnalyze" custom-style="margin-right:8px;">解析</van-button>
+    <van-button custom-style="margin-right:8px;" wx:if="{{ isSubmit }}" type="warning" size="small" bind:click="showCard">答题卡</van-button>
+    <van-button custom-style="margin-right:8px;"  type="warning" size="small" bind:click="showMore">更多</van-button>
+  </view>
+  <van-action-sheet
+  show="{{ showSheet }}"
+  actions="{{ actions }}"
+  bind:close="onClose"
+  bind:cancel="onClose"
+  bind:select="onSelect"
+  cancel-text="取消"
+  title="更多操作"
+/>
+</view>

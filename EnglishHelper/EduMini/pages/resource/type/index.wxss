@@ -1,0 +1,27 @@
+.body {
+  padding: 12px;
+}
+
+.card {
+  border: 2px solid #ffffff;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 2px 4px 8px 2px #cccccc;
+  margin: 8px;
+  padding: 8px;
+}
+
+.typeName {
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+
+.vip {
+  color: red;
+  font-size: 16px;
+}
+
+.typeDesc {
+  color: gray;
+  font-size: 16px;
+}

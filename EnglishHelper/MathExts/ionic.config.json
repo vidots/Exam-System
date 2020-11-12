@@ -1,0 +1,7 @@
+{
+  "name": "MathExts",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}

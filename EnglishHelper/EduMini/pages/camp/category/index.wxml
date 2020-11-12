@@ -1,0 +1,28 @@
+<view class="body">
+	<van-tabs color="#2b2b2b" type="card" active="{{ active }}" bind:change="onChange">
+		<van-tab title="训练营">
+			<view class="card" wx:for="{{ types }}" wx:key="id">
+				<view bindtap="onTypeClick" data-index="{{ index }}">
+					<view class="name">{{ item.typeName }}<text class="vip" wx:if="{{ item.needVip == 1 }}"> [会员独享]</text></view>
+					<view class="series-desc">{{ item.typeDesc }}</view>
+				</view>
+			</view>
+			<view class="blank" hidden="{{ types.length != 0 }}">
+				<text>暂无数据</text>
+			</view>
+		</van-tab>
+		<van-tab title="书籍">
+
+			<view class="card" wx:for="{{ books }}" wx:key="id">
+				<view bindtap="onBookClick" data-index="{{ index }}">
+					<view class="name">{{ item.name }}<text class="vip" wx:if="{{ item.needVip == 1 }}"> [会员独享]</text></view>
+					<view class="series-desc">{{ item.info }}</view>
+				</view>
+			</view>
+			<view class="blank" hidden="{{ books.length != 0 }}">
+				<text>暂无数据</text>
+			</view>
+		</van-tab>
+	</van-tabs>
+	<van-toast id="van-toast" />
+</view>

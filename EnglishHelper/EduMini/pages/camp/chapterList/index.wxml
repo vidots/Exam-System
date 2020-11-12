@@ -1,0 +1,5 @@
+<view>
+  <van-cell-group>
+    <van-cell size="large" wx:for="{{chapters}}" wx:key="id" title="{{ index + 1 }}. {{ item.name }}" link-type="navigateTo" url="/pages/chapter/index?chapter_id={{ item.id }}&chapter_name={{item.name}}" arrow-direction="left" />
+  </van-cell-group>
+</view>

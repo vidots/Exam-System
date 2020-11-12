@@ -1,0 +1,12 @@
+<view class="body">
+	<view class="card" wx:for="{{ serieses }}" wx:key="id">
+		<view bindtap="onItemClick" data-index="{{ index }}">
+			<view class="name">{{ item.name }} <text class="vip" wx:if="{{ item.needVip == 1 }}">[会员独享]</text></view>
+			<view class="series-desc">{{ item.seriesDesc }}</view>
+		</view>
+	</view>
+	<view class="blank" hidden="{{ serieses.length != 0 }}">
+		<text>暂无数据</text>
+	</view>
+	<van-toast id="van-toast" />
+</view>

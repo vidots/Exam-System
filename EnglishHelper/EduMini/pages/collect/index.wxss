@@ -1,0 +1,29 @@
+.choose_button {
+  -webkit-justify-content: flex-start !important;
+  justify-content:  flex-start !important;
+  margin-top: 20rpx;
+}
+
+.footer-group {
+  padding-bottom: 20rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.submit-button {
+  margin-right: 20rpx !important;
+}
+
+.blank {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

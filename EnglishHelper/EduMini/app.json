@@ -1,0 +1,100 @@
+{
+  "pages": [
+    "pages/words/type/index",
+    "pages/library/series/index",
+    "pages/index/index",
+    "pages/exam/index",
+    "pages/article/index",
+    "pages/library/paper/index",
+    "pages/camp/category/index",
+    "pages/camp/articleList/index",
+    "pages/camp/chapterList/index",
+    "pages/person/index",
+    "pages/chapter/index",
+    "pages/news/list/index",
+    "pages/news/detail/index",
+    "pages/dynamic/index",
+    "pages/collect/index",
+    "pages/words/list/index",
+    "pages/words/word/index",
+    "pages/resource/type/index",
+    "pages/resource/list/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "完美考研",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-action-sheet": "vant/action-sheet/index",
+    "van-area": "vant/area/index",
+    "van-button": "vant/button/index",
+    "van-calendar": "vant/calendar/index",
+    "van-card": "vant/card/index",
+    "van-cell": "vant/cell/index",
+    "van-cell-group": "vant/cell-group/index",
+    "van-checkbox": "vant/checkbox/index",
+    "van-checkbox-group": "vant/checkbox-group/index",
+    "van-circle": "vant/circle/index",
+    "van-col": "vant/col/index",
+    "van-collapse": "vant/collapse/index",
+    "van-collapse-item": "vant/collapse-item/index",
+    "van-count-down": "vant/count-down/index",
+    "van-datetime-picker": "vant/datetime-picker/index",
+    "van-dialog": "vant/dialog/index",
+    "van-divider": "vant/divider/index",
+    "van-dropdown-item": "vant/dropdown-item/index",
+    "van-dropdown-menu": "vant/dropdown-menu/index",
+    "van-grid": "vant/grid/index",
+    "van-grid-item": "vant/grid-item/index",
+    "van-icon": "vant/icon/index",
+    "van-image": "vant/image/index",
+    "van-loading": "vant/loading/index",
+    "van-popup": "vant/popup/index",
+    "van-picker": "vant/picker/index",
+    "van-picker-column": "vant/picker-column/index",
+    "van-progress": "vant/progress/index",
+    "van-radio": "vant/radio/index",
+    "van-radio-group": "vant/radio-group/index",
+    "van-sidebar": "vant/sidebar/index",
+    "van-sidebar-item": "vant/sidebar-item/index",
+    "van-tab": "vant/tab/index",
+    "van-tabs": "vant/tabs/index",
+    "van-tabbar": "vant/tabbar/index",
+    "van-tabbar-item": "vant/tabbar-item/index",
+    "van-row": "vant/row/index",
+    "van-notify": "vant/notify/index",
+    "van-field": "vant/field/index",
+    "van-toast": "vant/toast/index"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/words/type/index",
+        "text": "单词",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home_s.png"
+      },
+      {
+        "pagePath": "pages/camp/category/index",
+        "text": "星球",
+        "iconPath": "icon/template.png",
+        "selectedIconPath": "icon/template_s.png"
+      },
+      {
+        "pagePath": "pages/news/list/index",
+        "text": "资讯",
+        "iconPath": "icon/hot.png",
+        "selectedIconPath": "icon/hot_s.png"
+      },
+      {
+        "pagePath": "pages/person/index",
+        "text": "设置",
+        "iconPath": "icon/setting.png",
+        "selectedIconPath": "icon/setting_s.png"
+      }
+    ]
+  }
+}

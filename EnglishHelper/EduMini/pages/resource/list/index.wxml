@@ -1,0 +1,7 @@
+<view>
+   <van-cell-group>
+      <van-cell title="{{ item.title }}" size="large" wx:key="key" wx:for="{{ resources }}">
+        <van-icon data-index="{{ index }}"  bind:click="copyResource"  slot="right-icon" name="eye-o" />
+      </van-cell>
+   </van-cell-group>
+</view>

@@ -1,0 +1,65 @@
+.list-item {
+  border:1px solid lightgrey;
+  padding-top: 8px;
+  text-align: center;
+}
+
+.word {
+  text-align: center;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 16px;
+  border:1px solid lightgrey; 
+}
+
+.openrate-header {
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.words-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+.overview {
+  padding: 6px;
+  margin-top: 120px;
+}
+
+.words-num {
+  margin-top: 12px;
+  font-size: 18px;
+  color: gray;
+}
+
+.words-intro {
+  margin-top: 12px;
+  font-size: 18px;
+  color: gray;
+}
+
+.words-note {
+  margin-top: 12px;
+  font-size: 18px;
+  color: gray;
+}
+
+.cell-num {
+  font-size: 12px;
+  color: rgb(255, 0, 64);
+}
+
+.header-note {
+  text-align: center;
+  margin-bottom: 8px;
+  font-size: 16px;
+  color: gray;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

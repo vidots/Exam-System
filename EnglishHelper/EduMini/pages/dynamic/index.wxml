@@ -1,0 +1,6 @@
+<view>
+  <text>{{ article.title }}</text>
+  <view class="container">
+    <towxml nodes="{{content}}" />
+  </view>
+</view>

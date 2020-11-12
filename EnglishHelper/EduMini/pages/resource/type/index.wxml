@@ -1,0 +1,10 @@
+<view class="body">
+    <view class="card" wx:for="{{ types }}" wx:key="id">
+        <view bindtap="onItemClick" data-index="{{ index }}">
+            <view class="typeName">{{ item.typeName }} <text class="vip" wx:if="{{ item.needVip == 1 }}"> [会员独享]</text> </view> 
+            <view class="typeDesc">{{ item.typeDesc }}</view>
+        </view>
+    </view>
+    <van-toast id="van-toast" />
+</view>
+

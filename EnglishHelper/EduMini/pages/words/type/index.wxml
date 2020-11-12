@@ -1,0 +1,8 @@
+<view class="card" wx:for="{{ types }}" wx:key="id">
+     <view bindtap="onTypeClick" data-index="{{ index }}">
+      <view class="name">{{ item.name }}
+      </view>
+          <view class=" series-desc ">包含<text style="color: orange">{{item.num}}</text>单词：{{ item.intro }}</view>
+        </view>
+        <van-toast id="van-toast" />
+      </view>

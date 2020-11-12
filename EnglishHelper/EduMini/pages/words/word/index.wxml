@@ -1,0 +1,56 @@
+<view>
+  <view class="word-container"><text class="word-name">{{ currentWord + '  ' }}</text></view>
+  <scroll-view style="height: {{scrollviewHeight}}px" scroll-y="true">
+      <view class="ps-div" wx:if="{{ allAnalysis || engAnalysis }}">
+          <view class="item-title">单词发音：</view>
+          <view class="word-ps" wx:if="{{ currentDetail['wordBrief']['ukPron'] }}">英：[{{ currentDetail['wordBrief']['ukPron']['ps'] }}] <van-icon name="play-circle-o" bind:tap="clickUK" class="ps-icon"/><audio id="myAudio" ></audio></view>
+          <view class="word-ps" wx:if="{{ currentDetail['wordBrief']['usPron'] }}">美：[{{ currentDetail['wordBrief']['usPron']['ps'] }}] <van-icon name="play-circle-o"  class="ps-icon" bind:tap="clickUS"/></view>
+      </view>
+      <view wx:if="{{ allAnalysis }}">
+              <view class="item-title">中文解释：</view>
+              <view wx:key="index" wx:for="{{ currentDetail['wordBrief']['chnDefinitions'] }}" class="cn-def">
+                   <text selectable="true" class="word-pos">{{ item.pos == null ? '' : item.pos }}</text> <text class="word-def">{{ item.meaning }}</text>
+              </view>
+      </view>
+      <view wx:if="{{ engAnalysis }}">
+              <view class="item-title">英文解释：</view>
+              <view wx:key="index" wx:for="{{ currentDetail['wordBrief']['engDefinitions'] }}" class="en-def">
+                   <text  class="word-pos">{{ item.pos == null ? '' : item.pos }} </text><text class="word-def" selectable="true"> {{ item.meaning }}</text>
+              </view>
+      </view>
+      <view wx:if="{{ allAnalysis }}">
+          <view wx:if="{{ currentDetail['derivatives'] }}">
+             <view class="item-title">单词变形：</view>
+             <view wx:key="index" wx:for="{{ currentDetail['derivatives'] }}" class="derive">
+                   <text selectable="true">{{ item.relation }} : {{ item.word }}</text>
+              </view>
+          </view>
+      </view>
+      <view wx:if="{{ allAnalysis || engAnalysis }}">
+          <view wx:if="{{ currentDetail['sentenceLists'] }}">
+             <view class="item-title">单词例句：</view>
+             <view wx:if="{{ currentDetail['sentenceLists'][1]['sentences'].length > 6 }}">
+                <view wx:key="index" wx:for="{{ 6 }}" class="sentence">
+                   <view><text selectable="true">{{ currentDetail['sentenceLists'][1]['sentences'][index].eng }}</text></view>
+                   <view wx:if="{{ allAnalysis }}"><text selectable="true">{{ currentDetail['sentenceLists'][1]['sentences'][index].chn }}</text></view>
+              </view>
+             </view>
+             <view wx:else>
+                 <view wx:key="index" wx:for="{{ currentDetail['sentenceLists'][1]['sentences'] }}" class="sentence">
+                   <view><text selectable="true">{{ item.eng }}</text></view>
+                   <view wx:if="{{ allAnalysis }}"><text selectable="true">{{ item.chn }}</text></view>
+              </view>
+             </view>
+             
+          </view>
+      </view>
+  </scroll-view>
+  <van-notify id="van-notify" />
+  <view class="footer-group">
+    <van-button type="primary" plain custom-class="submit-button" bind:click="preWord">上一个</van-button>
+    <van-button type="primary" plain custom-class="submit-button" bind:click="nextWord">下一个</van-button>
+    <van-button  type="warning" size="small" bind:click="engAnalyze">英文</van-button>
+    <van-button custom-style="margin-left:8px;"  type="warning" size="small" bind:click="allAnalyze">解析</van-button>
+  </view>
+</view>
+

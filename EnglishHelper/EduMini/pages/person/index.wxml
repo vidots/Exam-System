@@ -1,0 +1,65 @@
+<view>
+    <van-row gutter="20">
+        <van-col wx:if="{{ imageUrl != '' }}" span="6">
+          <view class="center-ele">
+              <van-image round fit="cover"  width="60" height="60" src="{{ imageUrl }}" />
+          </view>
+        </van-col>
+        <van-col wx:if="{{ name != '' }}" span="18">
+            <view class="center-ele">
+                <text >{{ name }} </text>
+            </view>
+        </van-col>
+        <van-col span="6" wx:if="{{ imageUrl == '' }}">
+        <view  class="center-ele">
+            <van-button type="primary" open-type="getUserInfo" bind:getuserinfo="getUserInfo" size="small">授权</van-button>
+        </view>
+        </van-col>
+    </van-row>
+    <van-cell-group title="会员信息">
+        <van-cell size="large" icon="gem-o" title="{{ vip ? '会员大人，您好' : '您还不是会员，点击加入' }}" bind:click="clickVIP" />
+    </van-cell-group>
+
+    <van-cell-group title="资源">
+        <van-cell size="large" icon="more-o" title="考研资料" bind:click="enterResource" />
+        <van-cell size="large" icon="info-o" title="考研题库" bind:click="enterLibrary" />
+        <van-cell size="large" icon="points" title="收藏题库" bind:click="enterCollect" />
+    </van-cell-group>
+
+    <van-cell-group title="信息查看">
+        <van-cell size="large" bind:click="clickAbout" icon="friends-o" title="关于我们"  />
+        <van-cell size="large" bind:click="clickObligation"  icon="filter-o" title="免责声明"  />
+        <van-cell size="large" bind:click="clickUpate"  icon="setting-o" title="检查更新"  />
+        <van-cell size="large" icon="aim" title="单词设置" bind:click="setWordNum" />
+    </van-cell-group>
+
+    <van-dialog
+  use-slot
+  title="激活会员"
+  show="{{ showDialog }}"
+  show-cancel-button
+  bind:close="closeDialog"
+  bind:confirm="onConfirm"
+>
+  <van-field value="{{ vipCode }}" 
+              placeholder="输入激活码，从微信sc-mix处获取"
+              bind:change="onChange"
+               />
+</van-dialog>
+<van-dialog
+  use-slot
+  title="设置每个单词List的单词数量"
+  show="{{ showListNum }}"
+  show-cancel-button
+  bind:close="closeListNum"
+  bind:confirm="onConfirmListNum"
+>
+  <van-field value="{{ listNum }}" 
+              placeholder="填写数字10-100"
+              type="number"
+              input-align="center"
+              bind:change="setListNum"
+               />
+</van-dialog>
+<van-toast id="van-toast" />
+</view>

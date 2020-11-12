@@ -1,0 +1,7 @@
+{
+  "desc": "完美考研小程序",
+  "rules": [{
+  "action": "allow",
+  "page": "*"
+  }]
+}

@@ -1,0 +1,8 @@
+<view>
+  <van-cell-group hidden="{{ news.length == 0 }}">
+    <van-cell size="large" wx:for="{{news}}" wx:key="id" title="{{ index+ 1 }}. {{ item.title }}" label="{{ item.summary }}" link-type="navigateTo" url="/pages/news/detail/index?news_id={{ item.id }}" arrow-direction="left"  />
+  </van-cell-group>
+  <view class="blank" hidden="{{ news.length != 0 }}">
+		<text>暂无数据</text>
+	</view>
+</view>

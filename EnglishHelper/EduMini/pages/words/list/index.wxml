@@ -1,0 +1,35 @@
+<view class="body">
+ <van-row>
+    <van-col span="5">
+        <view>
+            <scroll-view style="height: {{scrollviewHeight}}px;padding:6px;" scroll-y="true">
+                <view bind:tap="clickOverview" class="list-item" >总览</view>
+           <view bind:tap="onChange" wx:key="index" wx:for="{{ wordsInfo.num / listSize  }}" class="list-item" data-index="{{ index }}">
+             List {{ index + 1 }}
+           </view>
+            </scroll-view>
+        </view>
+    </van-col>
+    <van-col span="18" offset="1">
+       <scroll-view style="height: {{scrollviewHeight}}px;padding:2px;" scroll-y="true">
+         <view wx:if="{{ activeIndex == 0 }}" class="overview">
+          <view class="words-title">{{ wordsInfo.name }}</view>
+          <view class="words-num">该系列共包含{{ wordsInfo.num }}个单词</view>
+          <view class="words-intro">{{wordsInfo.intro}}</view>
+          <view class="words-note">在设置里面可以修改每个List的单词数量</view>
+
+       </view>
+       <view wx:else>
+          <van-row>
+              <van-col span="24"><view class="openrate-header" ><van-button plain  bind:tap="startRemember" type="primary" size="small" style="margin-right: 24px;">开始背诵</van-button><van-button plain  bind:tap="toggleShowNum" type="primary" size="small">{{ showTitle }}</van-button></view></van-col>
+              <van-col span="24"><view class="header-note">当前在List {{activeIndex }}</view>
+              </van-col>
+              <van-col wx:key="index" wx:for="{{ wordsInfo.num  < activeIndex * listSize ? (wordsInfo.num - (activeIndex - 1) * listSize) : listSize }}" span="12">
+                  <view class="word" bind:tap="clickWord" data-index="{{ index }}" ><text>{{ words[index + (activeIndex - 1) * listSize] }}</text><text wx:if="{{ showNum }}" class="cell-num">[{{ nums[index + (activeIndex - 1) * listSize] }}]</text></view>
+              </van-col>
+          </van-row>
+       </view>
+       </scroll-view>
+    </van-col>
+ </van-row>
+</view>

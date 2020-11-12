@@ -1,0 +1,89 @@
+.word-name {
+  font-size: 22px;
+}
+
+.ps-icon {
+  margin-left: 4px;
+}
+
+.word-ps {
+  margin-left: 12px;
+  display: flex;
+  color: gray;
+  align-items: center;
+}
+
+.word-container {
+  text-align: center;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  height: 36px;
+}
+
+
+.cn-def {
+  margin-left: 12px;
+  color: gray;
+}
+
+.en-def {
+  margin-left: 12px;
+  color: gray;
+}
+
+.sentence {
+  margin-left: 12px;
+  font-size: 16px;
+  margin-top: 8px;
+  color: gray;
+}
+
+.item-title {
+  font-size: 18px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+}
+
+.word-pos {
+  font-size: 16px;
+  color: orange;
+}
+
+.word-def {
+  font-size: 16px;
+  color: gray;
+}
+
+.choose_button {
+  -webkit-justify-content: flex-start !important;
+  justify-content:  flex-start !important;
+  margin-top: 20rpx;
+}
+
+.footer-group {
+  padding-bottom: 20rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.submit-button {
+  margin-right: 20rpx !important;
+}
+
+.derive {
+  margin-left: 12px;
+  font-size: 16px;
+  color: gray;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

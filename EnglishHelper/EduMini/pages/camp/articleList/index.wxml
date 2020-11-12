@@ -1,0 +1,5 @@
+<view>
+  <van-cell-group>
+    <van-cell wx:for="{{articles}}" wx:key="id" title="{{ (index + 1) + '. ' + item.title }}" link-type="navigateTo" url="/pages/article/index?article_id={{ item.id }}" arrow-direction="left" size="large"/>
+  </van-cell-group>
+</view>
